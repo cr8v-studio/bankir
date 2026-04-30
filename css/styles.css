@@ -1251,7 +1251,10 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 16px;
+  width: 336px;
+  min-height: 238px;
 }
 
 .confirm-amount-box {
@@ -1304,11 +1307,35 @@ button {
 
 .confirm-cta {
   margin-top: 0;
+  min-width: 194px;
 }
 
 .confirm-cta img {
   width: 16px;
   height: 12px;
+}
+
+.how-bridge--compact {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.how-bridge--compact .how-bridge-rail {
+  flex: 0 0 auto;
+}
+
+.how-bridge--compact .how-bridge-copy {
+  gap: 0;
+  white-space: nowrap;
+}
+
+.how-bridge--compact .how-bridge-note {
+  line-height: 16px;
+  letter-spacing: 0.42px;
+}
+
+.how-bridge--compact .how-bridge-rate {
+  gap: 4px;
 }
 
 .button-small {
