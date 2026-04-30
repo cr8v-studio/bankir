@@ -584,6 +584,16 @@ button {
   background: var(--color-line);
 }
 
+#scenarios h2 {
+  max-width: none;
+  white-space: nowrap;
+}
+
+#how-it-works h2 {
+  max-width: none;
+  white-space: nowrap;
+}
+
 .scenario-grid {
   display: grid;
   grid-template-columns: 588px 588px;
@@ -594,17 +604,14 @@ button {
 
 .balance-card {
   position: relative;
-  min-height: 566px;
+  min-height: 486px;
   color: var(--color-white);
   overflow: visible;
 }
 
 .balance-card__surface {
   position: absolute;
-  top: 82px;
-  left: 0;
-  right: 0;
-  height: 484px;
+  inset: 0;
   overflow: hidden;
   border-radius: 24px;
   background: var(--color-brand);
@@ -612,13 +619,12 @@ button {
 
 .balance-card__globe {
   position: absolute;
-  top: 18px;
-  left: 50%;
+  top: -13px;
+  left: 38px;
   width: 512px;
   height: 512px;
-  transform: translateX(-50%);
-  opacity: 0.84;
-  filter: brightness(1.24) saturate(1.18) contrast(1.06);
+  opacity: 1;
+  filter: none;
 }
 
 .balance-card__surface p {
@@ -627,7 +633,7 @@ button {
   right: 48px;
   bottom: 24px;
   z-index: 2;
-  max-width: 432px;
+  max-width: 492px;
   margin: 0;
   color: var(--color-white);
   font-size: 19px;
@@ -637,7 +643,7 @@ button {
 
 .account-stack-visual {
   position: absolute;
-  top: -18px;
+  top: -23px;
   left: 0;
   right: 0;
   z-index: 1;
@@ -651,22 +657,12 @@ button {
   width: 382px;
   height: 358px;
   margin: 0 auto;
-  top: -23px;
-  transform: scale(0.985);
-  transform-origin: top center;
-}
-
-.account-stack::before {
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  z-index: -1;
-  width: 342px;
-  height: 118px;
-  background: radial-gradient(ellipse at center, rgba(6, 12, 19, 0.72) 0%, rgba(6, 12, 19, 0.52) 34%, rgba(6, 12, 19, 0.22) 56%, rgba(6, 12, 19, 0) 82%);
-  transform: translateX(-50%);
-  filter: blur(24px);
-  content: "";
+  top: 0;
+  filter: drop-shadow(0 6px 6px rgba(0, 0, 0, 0.1))
+    drop-shadow(0 23px 11.5px rgba(0, 0, 0, 0.09))
+    drop-shadow(0 51px 15.5px rgba(0, 0, 0, 0.05))
+    drop-shadow(0 91px 18px rgba(0, 0, 0, 0.01))
+    drop-shadow(0 141px 20px rgba(0, 0, 0, 0));
 }
 
 .account-card {
@@ -923,6 +919,7 @@ button {
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(2, 282px);
+  grid-template-rows: repeat(2, 231px);
   gap: 24px;
 }
 
@@ -935,13 +932,13 @@ button {
 }
 
 .feature-card {
-  min-height: 230px;
+  min-height: 231px;
   display: flex;
   flex-direction: column;
   padding: 24px;
-  border: 1px solid #ecf0f8;
-  border-radius: 24px;
-  background: #010304;
+  border: 1px solid #d5d8e2;
+  border-radius: 20px;
+  background: var(--color-white);
 }
 
 .feature-icon {
@@ -963,16 +960,16 @@ button {
 .feature-card h3,
 .step-card h3 {
   margin: 0;
-  color: #102432;
+  color: #0a1f2c;
   font-size: 31px;
   font-weight: 400;
-  line-height: 1.12;
+  line-height: 47px;
 }
 
 .feature-card p,
 .step-card p {
   margin: 12px 0 0;
-  color: #1f3547;
+  color: #27394c;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0;
