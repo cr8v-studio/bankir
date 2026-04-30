@@ -1308,7 +1308,6 @@ button {
 
 .confirm-cta {
   margin-top: 0;
-  min-width: 194px;
 }
 
 .confirm-cta img {
@@ -1337,12 +1336,6 @@ button {
 
 .how-bridge--compact .how-bridge-rate {
   gap: 4px;
-}
-
-.button-small {
-  min-height: 44px;
-  padding: 0 20px;
-  font-size: 14px;
 }
 
 .faq {
