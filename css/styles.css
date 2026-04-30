@@ -1052,6 +1052,7 @@ button {
   display: flex;
   align-items: center;
   gap: 8px;
+  padding-bottom: 8px;
 }
 
 .how-bridge--compact {
