@@ -233,51 +233,128 @@
 
       <section class="section how" id="how-it-works">
         <div class="container">
-          <p class="eyebrow">Как это работает</p>
+          <div class="scenario-heading">
+            <p class="eyebrow">Как это работает</p>
+            <span class="scenario-heading__line" aria-hidden="true"></span>
+          </div>
           <h2>Понятный перевод без банковской сложности</h2>
 
           <div class="steps-grid">
             <article class="step-card">
               <div class="step-head">
                 <span>01</span>
-                <a href="#start" aria-label="Перейти к выбору страны">↗</a>
+                <img src="assets/icons/arrow-right-up.svg" alt="" class="step-head-icon" />
               </div>
               <h3>Выберите страну и сумму</h3>
-              <div class="mini-transfer">
-                <div><span>RUB</span><strong>10 000,00</strong></div>
-                <div><span>KZT</span><strong>133,53</strong></div>
-                <div><span>USD</span><strong>133,53</strong></div>
+              <div class="step-divider" aria-hidden="true"></div>
+              <div class="how-calc how-calc-transfer">
+                <div class="how-calc-row">
+                  <div class="currency-chip">
+                    <img src="assets/flags/RU.svg" alt="" />
+                    <span>RUB</span>
+                    <img src="assets/icons/down.svg" alt="" class="currency-chip-arrow" />
+                  </div>
+                  <strong class="how-calc-amount">10 000,00</strong>
+                </div>
+
+                <div class="how-bridge">
+                  <div class="how-bridge-rail" aria-hidden="true">
+                    <span></span>
+                    <button class="rate-bridge-icon" type="button" aria-label="Направление перевода">
+                      <img src="assets/icons/down.svg" alt="" />
+                    </button>
+                    <span></span>
+                  </div>
+                  <div class="how-bridge-copy">
+                    <div class="how-bridge-rate">74,89 RUB = 1 USD</div>
+                    <div class="how-bridge-note">*Курс включает комиссию</div>
+                  </div>
+                </div>
+
+                <div class="how-calc-row">
+                  <div class="currency-chip">
+                    <img src="assets/flags/US.svg" alt="" />
+                    <span>USD</span>
+                    <img src="assets/icons/down.svg" alt="" class="currency-chip-arrow" />
+                  </div>
+                  <strong class="how-calc-amount">133,53</strong>
+                </div>
               </div>
-              <p>Система сразу покажет доступные направления и итоговую сумму.</p>
+              <div class="step-divider" aria-hidden="true"></div>
+              <p>Укажите направление и сумму перевода. Сервис покажет итоговые условия до отправки.</p>
             </article>
 
-            <article class="step-card step-card-accent">
+            <article class="step-card">
               <div class="step-head">
                 <span>02</span>
-                <a href="#start" aria-label="Перейти к вводу карты">↗</a>
+                <img src="assets/icons/arrow-right-up.svg" alt="" class="step-head-icon" />
               </div>
-              <h3>Введите данные карты</h3>
-              <div class="green-card">
-                <span>BANKIR</span>
-                <strong>133,53</strong>
-                <small>Получатель</small>
+              <h3>Введите<br />данные карты</h3>
+              <div class="step-divider" aria-hidden="true"></div>
+              <div class="map-card-panel">
+                <img src="assets/images/map-card.svg" alt="" class="map-card-bg" />
+                <div class="map-card-brand">
+                  <img src="assets/icons/logo-flow-transfer.svg" alt="" />
+                  <span>bankir</span>
+                </div>
+
+                <div class="map-card-row">
+                  <div class="currency-chip currency-chip--green">
+                    <img src="assets/flags/US.svg" alt="" />
+                    <span>USD</span>
+                  </div>
+                  <strong class="map-card-amount">133,53</strong>
+                </div>
+
+                <div class="map-card-data">
+                  <div class="map-card-data-label">Данные карты</div>
+                  <div class="map-card-data-row">
+                    <span>1234 1234 1234 1234</span>
+                    <img src="assets/icons/visa-logo.svg" alt="Visa" />
+                  </div>
+                </div>
               </div>
-              <p>Данные карты получателя нужны только для проведения перевода.</p>
+              <div class="step-divider" aria-hidden="true"></div>
+              <p>Добавьте карту получателя: Visa, Mastercard или UnionPay — ничего лишнего.</p>
             </article>
 
             <article class="step-card">
               <div class="step-head">
                 <span>03</span>
-                <a href="#start" aria-label="Перейти к подтверждению">↗</a>
+                <img src="assets/icons/arrow-right-up.svg" alt="" class="step-head-icon" />
               </div>
-              <h3>Подтвердите перевод</h3>
-              <div class="confirm-box">
-                <span class="status-dot"></span>
-                <p>Сумма с комиссией и курс зафиксированы.</p>
-                <strong>133,53 USD</strong>
-                <a class="button button-primary button-small" href="#start">Отправить деньги</a>
+              <h3>Подтвердите<br />перевод</h3>
+              <div class="step-divider" aria-hidden="true"></div>
+              <div class="how-confirm">
+                <div class="how-bridge how-bridge--compact">
+                  <div class="how-bridge-rail" aria-hidden="true">
+                    <span></span>
+                    <button class="rate-bridge-icon" type="button" aria-label="Статус перевода">
+                      <img src="assets/icons/down.svg" alt="" />
+                    </button>
+                    <span></span>
+                  </div>
+                  <div class="how-bridge-copy">
+                    <div class="how-bridge-note">Ожидаемое время доставки:</div>
+                    <div class="how-bridge-rate">СЕГОДНЯ ≈ 5:00 МИН.</div>
+                  </div>
+                </div>
+
+                <div class="confirm-amount-box">
+                  <span class="confirm-amount-label">Получателю поступит</span>
+                  <div class="confirm-amount-row">
+                    <strong>133,53</strong>
+                    <span>USD</span>
+                  </div>
+                </div>
+
+                <a class="button button-primary button-small confirm-cta" href="#start">
+                  Отправить деньги
+                  <img src="assets/icons/right.svg" alt="" />
+                </a>
               </div>
-              <p>Проверьте детали и подтвердите перевод, когда все готово.</p>
+              <div class="step-divider" aria-hidden="true"></div>
+              <p>Проверьте детали и отправьте. Зачисление обычно занимает несколько минут.</p>
             </article>
           </div>
         </div>

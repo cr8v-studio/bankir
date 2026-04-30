@@ -979,13 +979,13 @@ button {
 
 .steps-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, 384px);
   gap: 24px;
-  margin-top: 48px;
+  margin-top: 80px;
 }
 
 .step-card {
-  min-height: 440px;
+  min-height: 589px;
   padding: 24px;
 }
 
@@ -997,93 +997,306 @@ button {
 }
 
 .step-head span {
-  color: var(--color-brand);
-  font-size: 30px;
-  font-weight: 600;
-  line-height: 1;
+  color: #057352;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 47px;
 }
 
-.step-head a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  color: var(--color-dark);
-  font-size: 20px;
+.step-head-icon {
+  width: 24px;
+  height: 24px;
 }
 
-.mini-transfer,
-.confirm-box {
-  margin-top: 28px;
-  border-radius: 18px;
-  background: #f8faf9;
+.step-card h3 {
+  font-size: 31px;
+  line-height: 47px;
 }
 
-.mini-transfer {
-  display: grid;
-  gap: 10px;
-  padding: 18px;
+.step-divider {
+  width: 100%;
+  height: 1px;
+  margin: 24px 0;
+  background: #d5d8e2;
 }
 
-.mini-transfer div {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.how-calc,
+.how-confirm {
+  width: 100%;
+  height: 238px;
 }
 
-.mini-transfer strong {
-  color: var(--color-dark);
-  font-size: 22px;
-}
-
-.green-card {
+.how-calc {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 168px;
-  margin-top: 28px;
-  padding: 22px;
-  border-radius: 18px;
+}
+
+.how-calc-row,
+.map-card-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.how-calc-amount {
+  color: var(--color-dark);
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 47px;
+}
+
+.how-bridge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.how-bridge--compact {
+  align-items: flex-start;
+}
+
+.how-bridge-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 40px;
+}
+
+.how-bridge-rail span {
+  width: 1px;
+  height: 24px;
+  background: var(--color-brand);
+}
+
+.how-bridge-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.how-bridge-rate {
+  color: var(--color-dark);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.how-bridge-note {
+  color: #27394c;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.42px;
+}
+
+.map-card-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 238px;
+  overflow: hidden;
+  padding: 16px;
+  border-radius: 24px;
   background: var(--color-brand);
   color: var(--color-white);
 }
 
-.green-card span {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
+.map-card-bg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 960px;
+  height: 452.541px;
+  transform: translate(-217px, -25.73px);
+  pointer-events: none;
 }
 
-.green-card strong {
-  font-size: 34px;
+.map-card-brand,
+.map-card-data-row {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
 }
 
-.green-card small {
-  color: rgba(255, 255, 255, 0.8);
+.map-card-brand img {
+  width: 40px;
+  height: 40px;
 }
 
-.confirm-box {
-  padding: 18px;
+.map-card-brand span {
+  color: var(--color-white);
+  font-size: 11.429px;
+  font-weight: 600;
+  line-height: 17.143px;
+  letter-spacing: 2.857px;
+  text-transform: uppercase;
 }
 
-.confirm-box p {
-  margin-top: 10px;
+.currency-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 12px 8px 8px;
+  border: 1px solid #d5d8e2;
+  border-radius: 999px;
+  background: #f8f8fa;
 }
 
-.confirm-box strong {
-  display: block;
-  margin-top: 8px;
+.currency-chip img:first-child {
+  width: 24px;
+  height: 24px;
+}
+
+.currency-chip span {
   color: var(--color-dark);
-  font-size: 26px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.currency-chip-arrow {
+  width: 11.617px;
+  height: 6.692px;
+}
+
+.currency-chip--green {
+  border-color: #309b7b;
+  background: #309b7b;
+}
+
+.currency-chip--green span {
+  color: var(--color-white);
+}
+
+.map-card-amount {
+  position: relative;
+  z-index: 1;
+  color: var(--color-white);
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 47px;
+}
+
+.map-card-data {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #309b7b;
+  border-radius: 12px;
+  background: var(--color-brand);
+}
+
+.map-card-data-label {
+  position: absolute;
+  top: -11px;
+  left: 15px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: var(--color-brand);
+  color: #bee0d6;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: 1.82px;
+  text-transform: uppercase;
+}
+
+.map-card-data-row {
+  justify-content: space-between;
+}
+
+.map-card-data-row span {
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.map-card-data-row img {
+  width: 31.733px;
+  height: 10.426px;
+}
+
+.how-confirm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.confirm-amount-box {
+  position: relative;
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #d5d8e2;
+  border-radius: 12px;
+  background: var(--color-white);
+}
+
+.confirm-amount-label {
+  position: absolute;
+  top: -11px;
+  left: 15px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: var(--color-white);
+  color: #727e91;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: 1.82px;
+  text-transform: uppercase;
+}
+
+.confirm-amount-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.confirm-amount-row strong {
+  color: var(--color-dark);
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.confirm-amount-row span {
+  width: 36px;
+  height: 29px;
+  color: #27394c;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.confirm-cta {
+  margin-top: 0;
+}
+
+.confirm-cta img {
+  width: 16px;
+  height: 12px;
 }
 
 .button-small {
-  min-height: 36px;
-  margin-top: 16px;
-  padding: 0 16px;
-  font-size: 12px;
+  min-height: 44px;
+  padding: 0 20px;
+  font-size: 14px;
 }
 
 .faq {
@@ -1393,6 +1606,14 @@ button {
     grid-column: 1 / -1;
   }
 
+  .step-card {
+    min-height: auto;
+  }
+
+  .map-card-bg {
+    transform: translate(-265px, -25.73px);
+  }
+
   .faq {
     padding-top: 70px;
     padding-bottom: 110px;
@@ -1664,6 +1885,42 @@ button {
   .feature-card h3,
   .step-card h3 {
     font-size: 22px;
+  }
+
+  .step-head span {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .steps-grid {
+    margin-top: 40px;
+  }
+
+  .how-calc-amount,
+  .map-card-amount,
+  .confirm-amount-row strong {
+    font-size: 28px;
+    line-height: 1.05;
+  }
+
+  .map-card-panel,
+  .how-calc,
+  .how-confirm {
+    height: auto;
+    min-height: 238px;
+  }
+
+  .map-card-bg {
+    left: 50%;
+    top: 50%;
+    width: 760px;
+    height: auto;
+    transform: translate(-210px, -30px);
+  }
+
+  .confirm-amount-row span {
+    width: auto;
+    height: auto;
   }
 
   .faq {
