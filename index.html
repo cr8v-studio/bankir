@@ -44,36 +44,81 @@
               банковских процедур.
             </p>
             <ul class="proof-list" aria-label="Преимущества">
-              <li>Работаем с 190+</li>
-              <li>Без скрытых комиссий</li>
-              <li>Итоговая сумма заранее</li>
+              <li>
+                <img src="assets/icons/license-icon.svg" alt="" width="24" height="24" />
+                <span>Лицензия</span>
+                <span>DMCC</span>
+              </li>
+              <li>
+                <img src="assets/icons/countries-icon.svg" alt="" width="24" height="24" />
+                <span>190+</span>
+                <span>Стран</span>
+              </li>
+              <li>
+                <img src="assets/icons/fee-icon.svg" alt="" width="24" height="24" />
+                <span>Без скрытых комиссий</span>
+              </li>
             </ul>
           </div>
 
           <div class="hero-visual" aria-label="Пример международного перевода">
             <div class="transfer-card transfer-card-main">
-              <div class="currency-row">
-                <span>Вы отправляете</span>
-                <strong>999 999,99</strong>
-                <small>RUB</small>
+              <div class="payment-logos" aria-label="Поддерживаемые платежные системы">
+                <img src="assets/icons/visa-logo.svg" alt="Visa" />
+                <img src="assets/icons/unionpay.svg" alt="UnionPay" />
+                <img src="assets/icons/mastercard.svg" alt="Mastercard" />
               </div>
-              <div class="rate-row">
-                <span class="status-dot"></span>
-                <div>
-                  <strong>1 RUB = 1,337 KZT</strong>
-                  <small>Курс зафиксирован</small>
+
+              <div class="transfer-field">
+                <span class="field-label">Вы отправляете</span>
+                <div class="field-row">
+                  <button class="currency-chip" type="button" aria-label="Выбранная валюта отправки">
+                    <img src="assets/flags/RU.svg" alt="" width="24" height="24" />
+                    <span>RUB</span>
+                    <img src="assets/icons/arrow.svg" alt="" class="currency-chip-arrow" />
+                  </button>
+                  <strong>999 999,99</strong>
                 </div>
               </div>
-              <div class="currency-row">
-                <span>Получатель получит</span>
-                <strong>13 370,77</strong>
-                <small>USD</small>
+
+              <div class="rate-bridge">
+                <div class="rate-bridge-rail" aria-hidden="true">
+                  <span></span>
+                  <button class="rate-bridge-icon" type="button" aria-label="Направление перевода">
+                    <img src="assets/icons/down.svg" alt="" />
+                  </button>
+                  <span></span>
+                </div>
+                <div class="rate-bridge-copy">
+                  <strong>74,89 RUB = 1 USD</strong>
+                  <small>*Курс включает комиссию</small>
+                </div>
               </div>
-              <div class="summary-row">
-                <span>Сумма с комиссией</span>
-                <strong>до подтверждения</strong>
+
+              <div class="transfer-field">
+                <span class="field-label">Получателю поступит</span>
+                <div class="field-row">
+                  <button class="currency-chip" type="button" aria-label="Выбранная валюта получения">
+                    <img src="assets/flags/US.svg" alt="" width="24" height="24" />
+                    <span>USD</span>
+                    <img src="assets/icons/arrow.svg" alt="" class="currency-chip-arrow" />
+                  </button>
+                  <strong>13 370,77</strong>
+                </div>
               </div>
-              <a class="button button-primary button-wide" href="#how-it-works">Отправить деньги</a>
+
+              <div class="delivery-box">
+                <img src="assets/icons/timer.svg" alt="" width="24" height="24" />
+                <div>
+                  <span>Ожидаемое время доставки:</span>
+                  <strong>сегодня ≈ 5:00 мин.</strong>
+                </div>
+              </div>
+
+              <a class="button button-primary transfer-cta" href="#how-it-works">
+                <span>Отправить деньги</span>
+                <img src="assets/icons/right.svg" alt="" width="16" height="12" />
+              </a>
             </div>
           </div>
         </div>
@@ -81,46 +126,104 @@
 
       <section class="section scenarios" id="scenarios">
         <div class="container">
-          <p class="eyebrow">Сценарии</p>
+          <div class="scenario-heading">
+            <p class="eyebrow">Сценарии</p>
+            <span class="scenario-heading__line" aria-hidden="true"></span>
+          </div>
           <h2>Расширьте свои возможности</h2>
 
           <div class="scenario-grid">
             <article class="balance-card">
-              <div class="stacked-cards" aria-hidden="true">
-                <div></div>
-                <div></div>
-                <div class="balance-preview">
-                  <span>Доступно к отправке</span>
-                  <strong>25 165,09</strong>
-                  <small>EUR</small>
+              <div class="balance-card__surface">
+                <img class="balance-card__globe" src="assets/icons/globe.svg" alt="" />
+                <p>
+                  BANKIR подходит для повседневных международных переводов — от помощи
+                  близким до оплаты услуг за рубежом.
+                </p>
+              </div>
+
+              <div class="account-stack-visual" aria-hidden="true">
+                <div class="account-stack">
+                  <div class="account-card account-card--th">
+                    <div class="account-card__head">
+                      <div class="account-card__brand">
+                        <img src="assets/icons/logo-flow-transfer.svg" alt="" />
+                        <span>bankir</span>
+                      </div>
+                      <div class="account-card__pill">
+                        <img src="assets/flags/TH.svg" alt="" />
+                        <span>THB</span>
+                        <img src="assets/icons/arrow.svg" alt="" class="account-card__arrow" />
+                      </div>
+                    </div>
+                    <div class="account-card__amount-box account-card__amount-box--soft">
+                      <span class="account-card__label">Баланс:</span>
+                      <strong>25 165,09</strong>
+                    </div>
+                    <span class="account-card__date">01 апреля. 2026</span>
+                  </div>
+
+                  <div class="account-card account-card--usd">
+                    <div class="account-card__head">
+                      <div class="account-card__brand">
+                        <img src="assets/icons/logo-flow-transfer.svg" alt="" />
+                        <span>bankir</span>
+                      </div>
+                      <div class="account-card__pill">
+                        <img src="assets/flags/US.svg" alt="" />
+                        <span>USD</span>
+                        <img src="assets/icons/arrow.svg" alt="" class="account-card__arrow" />
+                      </div>
+                    </div>
+                    <div class="account-card__amount-box account-card__amount-box--soft">
+                      <span class="account-card__label">Баланс:</span>
+                      <strong>25 165,09</strong>
+                    </div>
+                    <span class="account-card__date">01 апреля. 2026</span>
+                  </div>
+
+                  <div class="account-card account-card--rub">
+                    <div class="account-card__head">
+                      <div class="account-card__brand">
+                        <img src="assets/icons/logo-flow-transfer.svg" alt="" />
+                        <span>bankir</span>
+                      </div>
+                      <div class="account-card__pill">
+                        <img src="assets/flags/RU.svg" alt="" />
+                        <span>RUB</span>
+                        <img src="assets/icons/arrow.svg" alt="" class="account-card__arrow" />
+                      </div>
+                    </div>
+                    <div class="account-card__amount-box">
+                      <span class="account-card__label">Баланс:</span>
+                      <strong>25 165,09</strong>
+                    </div>
+                    <span class="account-card__date">01/04/26</span>
+                  </div>
                 </div>
               </div>
-              <p>
-                Один понятный шаг для банковских карт, международных переводов и
-                оплаты услуг за рубежом.
-              </p>
             </article>
 
             <div class="feature-grid">
               <article class="feature-card">
-                <span class="feature-icon">⌂</span>
+                <span class="feature-icon"><img src="assets/icons/diversity-3.svg" alt="" /></span>
                 <h3>Семья и друзья</h3>
-                <p>Поддерживайте близких регулярными переводами в удобной валюте.</p>
+                <p>Поддерживайте близких за границей переводом прямо на банковскую карту.</p>
               </article>
               <article class="feature-card">
-                <span class="feature-icon">↗</span>
+                <span class="feature-icon"><img src="assets/icons/flight.svg" alt="" /></span>
                 <h3>Переезд</h3>
-                <p>Переводите деньги на карту в новой стране без лишних шагов.</p>
+                <p>Отправляйте средства себе или родственникам в другой стране.</p>
               </article>
               <article class="feature-card">
-                <span class="feature-icon">◷</span>
+                <span class="feature-icon"><img src="assets/icons/currency-ruble.svg" alt="" /></span>
                 <h3>Оплата услуг</h3>
-                <p>Закрывайте счета, сервисы и подписки за границей заранее.</p>
+                <p>Личные расходы, сервисы и повседневные платежи за рубежом.</p>
               </article>
               <article class="feature-card">
-                <span class="feature-icon">≋</span>
+                <span class="feature-icon"><img src="assets/icons/sync-alt.svg" alt="" /></span>
                 <h3>Переводы</h3>
-                <p>Отправляйте средства на Visa, Mastercard и UnionPay.</p>
+                <p>Удобный способ отправить деньги получателю за пределами страны.</p>
               </article>
             </div>
           </div>
