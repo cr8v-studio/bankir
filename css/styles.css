@@ -1487,9 +1487,9 @@ button {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 0.75fr 1fr;
-  gap: 24px;
-  align-items: stretch;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1fr);
+  gap: 24px 24px;
+  align-items: start;
 }
 
 .footer-legal {
@@ -1501,8 +1501,8 @@ button {
 }
 
 .footer-logo {
-  width: 269px;
-  height: auto;
+  width: 268.865px;
+  height: 56.842px;
 }
 
 .footer-legal h2 {
@@ -1526,18 +1526,28 @@ button {
 .footer-cta {
   position: relative;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  align-items: stretch;
+  justify-content: flex-start;
   min-height: 265px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 24px;
-  padding: 40px;
+  padding: 24px 40px;
+}
+
+.footer-cta-copy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 12px;
+  width: 303px;
 }
 
 .footer-cta h2 {
   max-width: 303px;
-  margin: 0 0 12px;
+  margin: 0;
   color: var(--color-white);
   font-size: 31px;
   font-weight: 400;
@@ -1548,10 +1558,20 @@ button {
   max-width: 303px;
 }
 
+.footer-cta-action {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1 0 0;
+  align-items: flex-end;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
 .footer-globe {
   position: absolute;
-  right: -150px;
-  bottom: -210px;
+  right: -40px;
+  bottom: -247px;
   width: 512px;
   height: 512px;
   opacity: 0.4;
@@ -1566,7 +1586,7 @@ button {
 
 .copyright {
   grid-column: 1 / -1;
-  margin: 24px 0 0;
+  margin: 0;
   color: var(--color-muted);
   font-size: 14px;
   line-height: 20px;
