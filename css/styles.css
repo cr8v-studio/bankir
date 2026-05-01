@@ -324,6 +324,7 @@ button {
 .transfer-card {
   position: relative;
   width: 430px;
+  border: 1px solid var(--color-line);
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.96);
   box-shadow: var(--shadow-card);
@@ -1131,6 +1132,7 @@ button {
 .step-card {
   min-height: 589px;
   padding: 24px;
+  border: 1px solid #d5d8e2;
 }
 
 .step-head {
@@ -1529,6 +1531,7 @@ button {
 
 .faq-item {
   overflow: hidden;
+  border: 1px solid #d5d8e2;
   border-radius: 24px;
   background: var(--color-white);
   box-shadow: 0 20px 32px rgba(1, 19, 14, 0.04), 0 8px 14px rgba(1, 19, 14, 0.02);
