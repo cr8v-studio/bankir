@@ -480,7 +480,7 @@ function initScrollMotion(motion, ScrollTrigger, SplitText) {
     });
   };
 
-  document.querySelectorAll(".section h2, .faq-copy h2, .footer-cta h2").forEach(revealText);
+  document.querySelectorAll(".section h2, .faq-copy h2").forEach(revealText);
 
   motion.utils.toArray(".scenario-heading, .eyebrow").forEach((item) => {
     motion.from(item, {
