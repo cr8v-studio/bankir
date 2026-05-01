@@ -475,7 +475,9 @@ button {
 .currency-chip-arrow {
   width: 11.62px;
   height: 6.69px;
+  display: block;
   flex: 0 0 11.62px;
+  margin-left: auto;
   transition: transform var(--duration-fast) var(--ease-out-strong);
 }
 
@@ -1139,7 +1141,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .step-head span {
@@ -1162,7 +1164,7 @@ button {
 .step-divider {
   width: 100%;
   height: 1px;
-  margin: 20px 0;
+  margin: 24px 0;
   background: #d5d8e2;
 }
 
@@ -1241,17 +1243,20 @@ button {
 
 .map-card-panel {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-between;
   width: 100%;
-  height: 238px;
+  aspect-ratio: 336 / 238;
+  height: auto;
   overflow: hidden;
-  padding: 16px;
   border-radius: 24px;
-  background: var(--color-brand);
-  color: var(--color-white);
+  background: transparent;
+}
+
+.map-card-full-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
 }
 
 .map-card-bg {
@@ -1411,7 +1416,7 @@ button {
   padding: 0 12px;
   border-radius: 999px;
   background: var(--color-white);
-  color: #727e91;
+  color: #057352;
   font-size: 14px;
   font-weight: 600;
   line-height: 21px;
@@ -2158,9 +2163,12 @@ button {
   }
 
   .map-card-panel {
-    min-height: 204px;
-    padding: 12px;
+    min-height: 0;
     border-radius: 20px;
+  }
+
+  .map-card-full-image {
+    border-radius: inherit;
   }
 
   .map-card-brand img {
