@@ -1191,7 +1191,13 @@ button {
   justify-content: space-between;
 }
 
-.how-calc-row,
+.how-calc-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
 .map-card-row {
   display: flex;
   align-items: center;
@@ -1199,10 +1205,15 @@ button {
 }
 
 .how-calc-amount {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100%;
   color: var(--color-dark);
-  font-size: 40px;
+  font-size: clamp(28px, 3.2vw, 40px);
   font-weight: 800;
-  line-height: 47px;
+  line-height: 1.05;
+  text-align: right;
+  white-space: nowrap;
 }
 
 .how-bridge {
@@ -2148,10 +2159,12 @@ button {
     margin-bottom: 18px;
   }
 
-  .feature-card h3,
-  .step-card h3 {
-    font-size: 22px;
-  }
+.feature-card h3,
+.step-card h3 {
+  font-size: 22px;
+  line-height: 1.2;
+  text-wrap: pretty;
+}
 
   .step-head span {
     font-size: 40px;
