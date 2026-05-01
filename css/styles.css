@@ -926,7 +926,6 @@ button {
 .feature-card,
 .step-card,
 .faq-item {
-  border: 1px solid var(--color-line);
   border-radius: 24px;
   background: var(--color-white);
 }
