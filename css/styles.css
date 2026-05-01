@@ -308,6 +308,17 @@ button {
   content: "";
 }
 
+.how-calc-transfer .currency-chip,
+.how-calc-transfer .currency-chip:hover,
+.how-calc-transfer .currency-chip:active {
+  cursor: default;
+  pointer-events: none;
+  background: #f8f8fa;
+  border-color: #d5d8e2;
+  box-shadow: none;
+  transform: none;
+}
+
 .proof-list img {
   width: 24px;
   height: 24px;
@@ -1927,6 +1938,7 @@ button {
   }
 
   .hero-copy {
+    align-items: flex-start;
     text-align: left;
   }
 
@@ -1943,6 +1955,8 @@ button {
   }
 
   .proof-list {
+    width: 100%;
+    align-self: flex-start;
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: 10px 16px;
@@ -2231,8 +2245,9 @@ button {
   }
 
   .faq-question span:first-child {
-    font-size: 24px;
-    line-height: 33px;
+    font-size: 19px;
+    line-height: 29px;
+    letter-spacing: 0.95px;
   }
 
   .faq-answer {
