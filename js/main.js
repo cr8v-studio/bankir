@@ -532,7 +532,7 @@ function initScrollMotion(motion, ScrollTrigger, SplitText) {
         scale: 0.94,
         opacity: 0,
         duration: 0.72,
-        ease: "back.out(1.35)",
+        ease: "power3.out",
       },
       "-=0.22",
     )
@@ -543,7 +543,7 @@ function initScrollMotion(motion, ScrollTrigger, SplitText) {
         scale: 0.9,
         opacity: 0,
         duration: 0.8,
-        ease: "back.out(1.35)",
+        ease: "power3.out",
       },
       "-=0.48",
     );
