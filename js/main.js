@@ -509,20 +509,44 @@ function initScrollMotion(motion, ScrollTrigger, SplitText) {
     ease: "power3.out",
   });
 
-  motion.from(".account-card", {
+  const accountStackTimeline = motion.timeline({
     scrollTrigger: {
       trigger: ".account-stack",
       start: "top 78%",
       once: true,
     },
-    y: 72,
-    rotate: (index) => [-5, 3, 0][index] || 0,
-    scale: 0.92,
-    opacity: 0,
-    stagger: 0.12,
-    duration: 0.78,
-    ease: "back.out(1.25)",
   });
+
+  accountStackTimeline
+    .from(".account-card--rub", {
+      y: 30,
+      scale: 0.96,
+      opacity: 0,
+      duration: 0.55,
+      ease: "power3.out",
+    })
+    .from(
+      ".account-card--usd",
+      {
+        y: 52,
+        scale: 0.94,
+        opacity: 0,
+        duration: 0.72,
+        ease: "back.out(1.35)",
+      },
+      "-=0.22",
+    )
+    .from(
+      ".account-card--th",
+      {
+        y: 96,
+        scale: 0.9,
+        opacity: 0,
+        duration: 0.8,
+        ease: "back.out(1.35)",
+      },
+      "-=0.48",
+    );
 
   motion.to(".balance-card__globe", {
     scrollTrigger: {
