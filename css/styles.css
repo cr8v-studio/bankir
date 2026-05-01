@@ -156,7 +156,7 @@ button {
   }
 
   .faq-question:hover .faq-icon {
-    transform: translateY(-1px);
+    background: var(--color-brand-2);
   }
 }
 
@@ -1728,6 +1728,12 @@ button {
     padding: 0 16px;
   }
 
+  .site-header {
+    background: rgba(255, 255, 255, 0.62);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+
   .brand {
     width: 156px;
   }
@@ -1981,10 +1987,47 @@ button {
     min-height: 238px;
   }
 
+  .map-card-panel {
+    min-height: 204px;
+    padding: 12px;
+    border-radius: 20px;
+  }
+
+  .map-card-brand img {
+    width: 96px;
+    height: auto;
+  }
+
+  .map-card-row {
+    align-items: center;
+  }
+
+  .currency-chip--green {
+    padding: 8px 10px 8px 8px;
+  }
+
+  .map-card-amount {
+    font-size: 30px;
+    line-height: 35px;
+  }
+
+  .map-card-data {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .map-card-data-label {
+    top: -10px;
+    left: 12px;
+    padding: 0 10px;
+    font-size: 13px;
+    line-height: 19px;
+  }
+
   .map-card-bg {
-    left: -210px;
-    top: -30px;
-    width: 760px;
+    left: -166px;
+    top: -24px;
+    width: 620px;
     height: auto;
     transform: none;
   }
@@ -2020,6 +2063,10 @@ button {
 
   .faq-item.is-open .faq-answer {
     margin: -4px 24px 16px;
+  }
+
+  .faq-icon {
+    transition: background-color var(--duration-fast) ease-out;
   }
 
   .site-footer {
