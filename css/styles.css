@@ -207,7 +207,7 @@ button {
 .hero {
   position: relative;
   min-height: 860px;
-  padding: 0 0 110px;
+  padding: 0 0 120px;
   overflow: hidden;
 }
 
@@ -778,7 +778,7 @@ button {
   position: absolute;
   left: 48px;
   right: 48px;
-  bottom: 24px;
+  bottom: 32px;
   z-index: 2;
   max-width: 492px;
   margin: 0;
@@ -1121,15 +1121,11 @@ button {
   letter-spacing: 0;
 }
 
-.how {
-  padding-top: 90px;
-}
-
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(3, 384px);
   gap: 24px;
-  margin-top: 80px;
+  margin-top: 48px;
 }
 
 .step-card {
@@ -1141,7 +1137,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .step-head span {
@@ -1164,7 +1160,7 @@ button {
 .step-divider {
   width: 100%;
   height: 1px;
-  margin: 24px 0;
+  margin: 20px 0;
   background: #d5d8e2;
 }
 
@@ -1479,8 +1475,8 @@ button {
 
 .faq {
   position: relative;
-  padding-top: 160px;
-  padding-bottom: 160px;
+  padding-top: 120px;
+  padding-bottom: 120px;
   overflow: hidden;
 }
 
@@ -1504,10 +1500,10 @@ button {
 .faq-copy {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
   justify-content: flex-start;
   min-height: 560px;
-  padding: 24px 0;
+  padding: 0;
 }
 
 .faq-copy h2 {
@@ -1528,7 +1524,7 @@ button {
 
 .faq-list {
   display: grid;
-  gap: 24px;
+  gap: 16px;
 }
 
 .faq-item {
@@ -1541,7 +1537,7 @@ button {
 .faq-question {
   display: grid;
   grid-template-columns: 1fr 30px;
-  gap: 24px;
+  gap: 16px;
   align-items: start;
   width: 100%;
   border: 0;
@@ -1614,13 +1610,13 @@ button {
   max-height: var(--faq-answer-height, 96px);
   opacity: 1;
   transform: translateY(0);
-  margin: -12px 24px 24px;
+  margin: -8px 24px 20px;
 }
 
 .site-footer {
   background: var(--color-dark);
   color: var(--color-white);
-  padding: 48px 0;
+  padding: 40px 0 48px;
 }
 
 .footer-grid {
@@ -1635,7 +1631,7 @@ button {
   flex-direction: column;
   justify-content: space-between;
   min-height: 265px;
-  padding: 24px 24px 24px 0;
+  padding: 8px 24px 8px 0;
 }
 
 .footer-logo {
@@ -1670,7 +1666,7 @@ button {
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 24px;
-  padding: 24px 40px;
+  padding: 32px 40px;
 }
 
 .footer-cta-copy {
@@ -1679,7 +1675,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  gap: 12px;
+  gap: 16px;
   width: 303px;
 }
 
@@ -1789,7 +1785,7 @@ button {
   }
 
   .section {
-    padding: 90px 0;
+    padding: 96px 0;
   }
 
   .feature-grid {
@@ -1812,6 +1808,7 @@ button {
 
   .steps-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 40px;
   }
 
   .steps-grid .step-card:last-child {
@@ -1829,12 +1826,18 @@ button {
   }
 
   .faq {
-    padding-top: 70px;
-    padding-bottom: 110px;
+    padding-top: 96px;
+    padding-bottom: 104px;
   }
 
   .faq-copy {
+    gap: 16px;
+    min-height: auto;
     padding-top: 0;
+  }
+
+  .faq-list {
+    gap: 16px;
   }
 
   .footer-grid {
@@ -1851,6 +1854,7 @@ button {
 
   .footer-cta {
     order: 1;
+    padding: 32px;
   }
 
   .copyright {
@@ -1906,7 +1910,7 @@ button {
 
   .hero {
     min-height: auto;
-    padding: 16px 0 64px;
+    padding: 16px 0 72px;
     overflow: visible;
   }
 
@@ -2063,7 +2067,7 @@ button {
   }
 
   .section {
-    padding: 72px 0;
+    padding: 64px 0;
   }
 
   .section h2,
@@ -2133,7 +2137,7 @@ button {
   }
 
   .steps-grid {
-    margin-top: 40px;
+    margin-top: 32px;
   }
 
   .how-calc-amount,
@@ -2202,7 +2206,7 @@ button {
 
   .faq {
     padding-top: 48px;
-    padding-bottom: 70px;
+    padding-bottom: 64px;
   }
 
   .faq-list {
@@ -2212,7 +2216,7 @@ button {
   .faq-question {
     grid-template-columns: 1fr 40px;
     gap: 8px;
-    padding: 16px 24px;
+    padding: 16px 20px;
   }
 
   .faq-question span:first-child {
@@ -2221,11 +2225,11 @@ button {
   }
 
   .faq-answer {
-    margin: 0 24px;
+    margin: 0 20px;
   }
 
   .faq-item.is-open .faq-answer {
-    margin: -4px 24px 16px;
+    margin: -4px 20px 16px;
   }
 
   .faq-icon {
@@ -2247,7 +2251,7 @@ button {
     min-height: 250px;
     align-items: flex-start;
     flex-direction: column;
-    padding: 24px;
+    padding: 24px 20px;
   }
 
   .footer-cta h2 {
@@ -2268,7 +2272,7 @@ button {
 
   .footer-legal {
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
   }
 
   .footer-logo {
