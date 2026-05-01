@@ -40,6 +40,10 @@ body {
   line-height: 1.45;
 }
 
+body.is-motion-ready {
+  overflow-x: hidden;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -166,7 +170,8 @@ button {
     transform var(--duration-press) var(--ease-out-strong),
     background-color var(--duration-fast) var(--ease-out-strong),
     border-color var(--duration-fast) var(--ease-out-strong),
-    color var(--duration-fast) var(--ease-out-strong);
+    color var(--duration-fast) var(--ease-out-strong),
+    box-shadow var(--duration-fast) var(--ease-out-strong);
 }
 
 .button:active {
@@ -206,6 +211,7 @@ button {
 
 .hero {
   position: relative;
+  --hero-map-shift: 0px;
   min-height: 860px;
   padding: 0 0 120px;
   overflow: hidden;
@@ -234,6 +240,7 @@ button {
   background: url("../assets/images/map.svg") no-repeat left top / 1188px auto;
   mask-image: none;
   opacity: 1;
+  transform: translateY(var(--hero-map-shift));
 }
 
 .hero-grid {
@@ -709,6 +716,13 @@ button {
 .transfer-cta img {
   width: 16px;
   height: 12px;
+  transition: transform var(--duration-fast) var(--ease-out-strong);
+}
+
+@media (hover: hover) {
+  .transfer-cta:hover img {
+    transform: translateX(4px);
+  }
 }
 
 .eyebrow {
@@ -1749,6 +1763,18 @@ button {
   flex: 0 0 auto;
 }
 
+.motion-line,
+.motion-word {
+  display: inline-block;
+}
+
+.motion-reveal,
+.motion-card,
+.motion-section,
+.motion-stagger > * {
+  will-change: transform, opacity;
+}
+
 .copyright {
   grid-column: 1 / -1;
   margin: 0;
@@ -1779,7 +1805,7 @@ button {
     width: 1188px;
     height: 560px;
     background-size: 1188px auto;
-    transform: translateX(-50%);
+    transform: translate(-50%, var(--hero-map-shift));
   }
 
   .hero-grid,

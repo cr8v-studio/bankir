@@ -341,6 +341,343 @@ if (calculator) {
   initTransferCalculator(calculator);
 }
 
+initMotionExperience();
+
+function initMotionExperience() {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const gsapInstance = window.gsap;
+
+  if (prefersReducedMotion || !gsapInstance) {
+    return;
+  }
+
+  const { gsap: motion } = window;
+  const ScrollTrigger = window.ScrollTrigger;
+  const SplitText = window.SplitText;
+
+  if (ScrollTrigger) {
+    motion.registerPlugin(ScrollTrigger);
+  }
+
+  if (SplitText) {
+    motion.registerPlugin(SplitText);
+  }
+
+  document.body.classList.add("is-motion-ready");
+  initSmoothScroll(motion, ScrollTrigger);
+  initHeroMotion(motion, SplitText);
+  initScrollMotion(motion, ScrollTrigger, SplitText);
+  initInteractiveMotion(motion);
+}
+
+function initSmoothScroll(motion, ScrollTrigger) {
+  const Lenis = window.Lenis;
+  const useSmoothScroll = window.matchMedia("(min-width: 810px)").matches;
+
+  if (!Lenis || !ScrollTrigger || !useSmoothScroll) {
+    return;
+  }
+
+  const lenis = new Lenis({
+    duration: 1.08,
+    easing: (t) => Math.min(1, 1.001 - 2 ** (-10 * t)),
+    smoothWheel: true,
+    syncTouch: false,
+  });
+
+  lenis.on("scroll", ScrollTrigger.update);
+
+  motion.ticker.add((time) => {
+    lenis.raf(time * 1000);
+  });
+
+  motion.ticker.lagSmoothing(0);
+}
+
+function initHeroMotion(motion, SplitText) {
+  const heroTitle = document.querySelector(".hero-copy h1");
+  const heroLead = document.querySelector(".hero-copy p");
+  const proofItems = document.querySelectorAll(".proof-list li");
+  const headerItems = document.querySelectorAll(".brand, .nav-pill, .header-cta");
+  const transferCard = document.querySelector(".transfer-card-main");
+  const transferParts = transferCard?.querySelectorAll(
+    ".payment-logos img, .transfer-field, .rate-bridge, .delivery-box, .transfer-cta",
+  );
+
+  let titleTargets = heroTitle;
+
+  if (SplitText && heroTitle) {
+    titleTargets = new SplitText(heroTitle, {
+      type: "lines,words",
+      linesClass: "motion-line",
+      wordsClass: "motion-word",
+    }).words;
+  }
+
+  const intro = motion.timeline({
+    defaults: { ease: "power3.out", duration: 0.85 },
+  });
+
+  intro
+    .from(headerItems, { y: -18, opacity: 0, stagger: 0.08, duration: 0.55 })
+    .from(titleTargets, { yPercent: 105, opacity: 0, stagger: 0.035 }, "-=0.2")
+    .from(heroLead, { y: 24, opacity: 0 }, "-=0.55")
+    .from(proofItems, { y: 18, opacity: 0, stagger: 0.07, duration: 0.55 }, "-=0.45")
+    .from(
+      transferCard,
+      {
+        x: 54,
+        y: 24,
+        scale: 0.96,
+        opacity: 0,
+        filter: "blur(10px)",
+        duration: 0.95,
+        clearProps: "filter",
+      },
+      "-=0.9",
+    )
+    .from(
+      transferParts,
+      {
+        y: 18,
+        opacity: 0,
+        stagger: 0.065,
+        duration: 0.58,
+        clearProps: "filter",
+      },
+      "-=0.48",
+    );
+}
+
+function initScrollMotion(motion, ScrollTrigger, SplitText) {
+  if (!ScrollTrigger) {
+    return;
+  }
+
+  const revealText = (element) => {
+    if (!element) {
+      return;
+    }
+
+    let targets = element;
+
+    if (SplitText) {
+      targets = new SplitText(element, {
+        type: "lines",
+        linesClass: "motion-line",
+      }).lines;
+    }
+
+    motion.from(targets, {
+      scrollTrigger: {
+        trigger: element,
+        start: "top 82%",
+        once: true,
+      },
+      y: 32,
+      opacity: 0,
+      stagger: 0.08,
+      duration: 0.75,
+      ease: "power3.out",
+    });
+  };
+
+  document.querySelectorAll(".section h2, .faq-copy h2, .footer-cta h2").forEach(revealText);
+
+  motion.utils.toArray(".scenario-heading, .eyebrow").forEach((item) => {
+    motion.from(item, {
+      scrollTrigger: {
+        trigger: item,
+        start: "top 86%",
+        once: true,
+      },
+      y: 18,
+      opacity: 0,
+      duration: 0.5,
+      ease: "power2.out",
+    });
+  });
+
+  motion.from(".balance-card__surface", {
+    scrollTrigger: {
+      trigger: ".balance-card",
+      start: "top 76%",
+      once: true,
+    },
+    y: 44,
+    scale: 0.98,
+    opacity: 0,
+    duration: 0.75,
+    ease: "power3.out",
+  });
+
+  motion.from(".account-card", {
+    scrollTrigger: {
+      trigger: ".account-stack",
+      start: "top 78%",
+      once: true,
+    },
+    y: 72,
+    rotate: (index) => [-5, 3, 0][index] || 0,
+    scale: 0.92,
+    opacity: 0,
+    stagger: 0.12,
+    duration: 0.78,
+    ease: "back.out(1.25)",
+  });
+
+  motion.to(".balance-card__globe", {
+    scrollTrigger: {
+      trigger: ".scenarios",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1.1,
+    },
+    rotate: 10,
+    scale: 1.05,
+    ease: "none",
+  });
+
+  motion.from(".feature-card", {
+    scrollTrigger: {
+      trigger: ".feature-grid",
+      start: "top 78%",
+      once: true,
+    },
+    y: 34,
+    opacity: 0,
+    stagger: 0.08,
+    duration: 0.62,
+    ease: "power3.out",
+  });
+
+  motion.from(".feature-icon", {
+    scrollTrigger: {
+      trigger: ".feature-grid",
+      start: "top 78%",
+      once: true,
+    },
+    scale: 0.4,
+    rotate: -18,
+    opacity: 0,
+    stagger: 0.08,
+    duration: 0.58,
+    ease: "back.out(1.7)",
+  });
+
+  motion.from(".step-card", {
+    scrollTrigger: {
+      trigger: ".steps-grid",
+      start: "top 78%",
+      once: true,
+    },
+    y: 42,
+    opacity: 0,
+    stagger: 0.12,
+    duration: 0.72,
+    ease: "power3.out",
+  });
+
+  motion.from(".step-divider", {
+    scrollTrigger: {
+      trigger: ".steps-grid",
+      start: "top 76%",
+      once: true,
+    },
+    scaleX: 0,
+    transformOrigin: "left center",
+    stagger: 0.12,
+    duration: 0.58,
+    ease: "power2.out",
+  });
+
+  motion.from(".faq-item", {
+    scrollTrigger: {
+      trigger: ".faq-list",
+      start: "top 80%",
+      once: true,
+    },
+    y: 26,
+    opacity: 0,
+    stagger: 0.07,
+    duration: 0.58,
+    ease: "power3.out",
+  });
+
+  motion.from(".footer-legal, .footer-cta", {
+    scrollTrigger: {
+      trigger: ".site-footer",
+      start: "top 88%",
+      once: true,
+    },
+    y: 32,
+    opacity: 0,
+    stagger: 0.12,
+    duration: 0.7,
+    ease: "power3.out",
+  });
+
+  motion.to(".footer-globe", {
+    y: -18,
+    rotate: 8,
+    duration: 5,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut",
+  });
+
+  motion.to(".hero.section-map", {
+    scrollTrigger: {
+      trigger: ".hero",
+      start: "top top",
+      end: "bottom top",
+      scrub: 1,
+    },
+    "--hero-map-shift": "48px",
+    ease: "none",
+  });
+}
+
+function initInteractiveMotion(motion) {
+  const hoverTargets = document.querySelectorAll(
+    ".button, .currency-chip, .feature-card, .step-card, .faq-item",
+  );
+
+  hoverTargets.forEach((target) => {
+    target.addEventListener("mouseenter", () => {
+      motion.to(target, {
+        y: target.classList.contains("button") || target.classList.contains("currency-chip") ? -2 : -4,
+        boxShadow: target.classList.contains("button")
+          ? "0 12px 24px rgba(6, 135, 96, 0.2)"
+          : "0 22px 42px rgba(1, 19, 14, 0.08)",
+        duration: 0.22,
+        ease: "power2.out",
+        overwrite: "auto",
+      });
+    });
+
+    target.addEventListener("mouseleave", () => {
+      motion.to(target, {
+        y: 0,
+        boxShadow: "",
+        duration: 0.28,
+        ease: "power2.out",
+        overwrite: "auto",
+      });
+    });
+  });
+
+  document.querySelectorAll(".rate-bridge-icon").forEach((icon) => {
+    motion.to(icon, {
+      y: 3,
+      duration: 1.25,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+    });
+  });
+}
+
 function initTransferCalculator(root) {
   const state = {
     sendCountry: getCountryByCode("RU"),
