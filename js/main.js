@@ -892,22 +892,63 @@ function createCurrencyMenu(root) {
   element.className = "currency-menu";
   element.innerHTML = `
     <input class="currency-menu__search" type="search" placeholder="Страна или валюта" autocomplete="off" />
-    <div class="currency-menu__list" role="listbox"></div>
+    <div class="currency-menu__list" role="listbox" tabindex="0"></div>
   `;
   root.append(element);
 
-  element.addEventListener("wheel", stopScrollPropagation, { passive: true });
-  element.addEventListener("touchmove", stopScrollPropagation, { passive: true });
+  const list = element.querySelector(".currency-menu__list");
+
+  bindCurrencyMenuScroll(list);
 
   return {
     element,
     search: element.querySelector(".currency-menu__search"),
-    list: element.querySelector(".currency-menu__list"),
+    list,
   };
 }
 
-function stopScrollPropagation(event) {
-  event.stopPropagation();
+function bindCurrencyMenuScroll(list) {
+  let lastTouchY = 0;
+
+  list.addEventListener(
+    "wheel",
+    (event) => {
+      if (list.scrollHeight <= list.clientHeight) {
+        return;
+      }
+
+      event.preventDefault();
+      event.stopPropagation();
+      list.scrollTop += event.deltaY;
+    },
+    { passive: false },
+  );
+
+  list.addEventListener(
+    "touchstart",
+    (event) => {
+      lastTouchY = event.touches[0]?.clientY || 0;
+    },
+    { passive: true },
+  );
+
+  list.addEventListener(
+    "touchmove",
+    (event) => {
+      if (list.scrollHeight <= list.clientHeight) {
+        return;
+      }
+
+      const currentTouchY = event.touches[0]?.clientY || lastTouchY;
+      const deltaY = lastTouchY - currentTouchY;
+
+      event.preventDefault();
+      event.stopPropagation();
+      list.scrollTop += deltaY;
+      lastTouchY = currentTouchY;
+    },
+    { passive: false },
+  );
 }
 
 function updateCurrencyTrigger(trigger, country) {
