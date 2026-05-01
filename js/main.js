@@ -398,10 +398,10 @@ function initHeroMotion(motion, SplitText) {
   const heroTitle = document.querySelector(".hero-copy h1");
   const heroLead = document.querySelector(".hero-copy p");
   const proofItems = document.querySelectorAll(".proof-list li");
-  const headerItems = document.querySelectorAll(".brand, .nav-pill, .header-cta");
+  const headerItems = document.querySelectorAll(".brand, .nav-pill");
   const transferCard = document.querySelector(".transfer-card-main");
   const transferParts = transferCard?.querySelectorAll(
-    ".payment-logos img, .transfer-field, .rate-bridge, .delivery-box, .transfer-cta",
+    ".payment-logos img, .transfer-field, .rate-bridge, .delivery-box",
   );
 
   let titleTargets = heroTitle;
@@ -426,9 +426,6 @@ function initHeroMotion(motion, SplitText) {
     .from(
       transferCard,
       {
-        x: 54,
-        y: 24,
-        scale: 0.96,
         opacity: 0,
         filter: "blur(10px)",
         duration: 0.95,
@@ -639,17 +636,13 @@ function initScrollMotion(motion, ScrollTrigger, SplitText) {
 }
 
 function initInteractiveMotion(motion) {
-  const hoverTargets = document.querySelectorAll(
-    ".button, .currency-chip, .feature-card, .step-card, .faq-item",
-  );
+  const hoverTargets = document.querySelectorAll(".currency-chip, .feature-card, .step-card, .faq-item");
 
   hoverTargets.forEach((target) => {
     target.addEventListener("mouseenter", () => {
       motion.to(target, {
-        y: target.classList.contains("button") || target.classList.contains("currency-chip") ? -2 : -4,
-        boxShadow: target.classList.contains("button")
-          ? "0 12px 24px rgba(6, 135, 96, 0.2)"
-          : "0 22px 42px rgba(1, 19, 14, 0.08)",
+        y: target.classList.contains("currency-chip") ? -2 : -4,
+        boxShadow: "0 22px 42px rgba(1, 19, 14, 0.08)",
         duration: 0.22,
         ease: "power2.out",
         overwrite: "auto",
