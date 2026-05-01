@@ -62,23 +62,38 @@
             </ul>
           </div>
 
-          <div class="hero-visual" aria-label="Пример международного перевода">
-            <div class="transfer-card transfer-card-main">
+          <div class="hero-visual" aria-label="Интерактивный калькулятор международного перевода">
+            <div class="transfer-card transfer-card-main" data-transfer-calculator>
               <div class="payment-logos" aria-label="Поддерживаемые платежные системы">
                 <img src="assets/icons/visa-logo.svg" alt="Visa" />
                 <img src="assets/icons/unionpay.svg" alt="UnionPay" />
                 <img src="assets/icons/mastercard.svg" alt="Mastercard" />
               </div>
 
-              <div class="transfer-field">
+              <div class="transfer-field" data-currency-field="send">
                 <span class="field-label">Вы отправляете</span>
                 <div class="field-row">
-                  <button class="currency-chip" type="button" aria-label="Выбранная валюта отправки">
-                    <img src="assets/flags/RU.svg" alt="" width="24" height="24" />
-                    <span>RUB</span>
+                  <button
+                    class="currency-chip"
+                    type="button"
+                    aria-label="Выбрать страну отправителя"
+                    aria-expanded="false"
+                    data-currency-trigger="send"
+                  >
+                    <img src="assets/flags/RU.svg" alt="" width="24" height="24" data-currency-flag />
+                    <span data-currency-code>RUB</span>
                     <img src="assets/icons/arrow.svg" alt="" class="currency-chip-arrow" />
                   </button>
-                  <strong>999 999,99</strong>
+                  <label class="amount-control" aria-label="Сумма отправления">
+                    <input
+                      type="text"
+                      inputmode="decimal"
+                      autocomplete="off"
+                      value="999 999,99"
+                      placeholder="0,00"
+                      data-send-amount
+                    />
+                  </label>
                 </div>
               </div>
 
@@ -91,20 +106,26 @@
                   <span></span>
                 </div>
                 <div class="rate-bridge-copy">
-                  <strong>74,89 RUB = 1 USD</strong>
-                  <small>*Курс включает комиссию</small>
+                  <strong data-rate-label>74,89 RUB = 1 USD</strong>
+                  <small data-rate-note>*Курс включает комиссию</small>
                 </div>
               </div>
 
-              <div class="transfer-field">
+              <div class="transfer-field" data-currency-field="receive">
                 <span class="field-label">Получателю поступит</span>
                 <div class="field-row">
-                  <button class="currency-chip" type="button" aria-label="Выбранная валюта получения">
-                    <img src="assets/flags/US.svg" alt="" width="24" height="24" />
-                    <span>USD</span>
+                  <button
+                    class="currency-chip"
+                    type="button"
+                    aria-label="Выбрать страну получателя"
+                    aria-expanded="false"
+                    data-currency-trigger="receive"
+                  >
+                    <img src="assets/flags/US.svg" alt="" width="24" height="24" data-currency-flag />
+                    <span data-currency-code>USD</span>
                     <img src="assets/icons/arrow.svg" alt="" class="currency-chip-arrow" />
                   </button>
-                  <strong>13 370,77</strong>
+                  <strong class="receive-amount" data-receive-amount>13 370,77</strong>
                 </div>
               </div>
 
@@ -112,7 +133,7 @@
                 <img src="assets/icons/timer.svg" alt="" width="24" height="24" />
                 <div>
                   <span>Ожидаемое время доставки:</span>
-                  <strong>сегодня ≈ 5:00 мин.</strong>
+                  <strong data-delivery-label>сегодня ≈ 5:00 мин.</strong>
                 </div>
               </div>
 
