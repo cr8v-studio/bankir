@@ -619,12 +619,13 @@ button {
 
 .balance-card__globe {
   position: absolute;
-  top: -13px;
-  left: 38px;
+  top: 50%;
+  left: 50%;
   width: 512px;
   height: 512px;
   opacity: 1;
   filter: none;
+  transform: translate(-50%, -50%);
 }
 
 .balance-card__surface p {
@@ -1112,11 +1113,11 @@ button {
 
 .map-card-bg {
   position: absolute;
-  left: calc(50% - 217px);
-  top: calc(50% - 25.73px);
+  left: -217px;
+  top: -26px;
   width: 960px;
   height: 452.541px;
-  transform: translate(-50%, -50%);
+  transform: none;
   pointer-events: none;
 }
 
@@ -1130,22 +1131,13 @@ button {
 
 .map-card-brand {
   align-self: flex-start;
-  width: 111.429px;
-  gap: 2px;
+  width: auto;
+  gap: 0;
 }
 
 .map-card-brand img {
-  width: 40px;
-  height: 40px;
-}
-
-.map-card-brand span {
-  color: var(--color-white);
-  font-size: 11.429px;
-  font-weight: 600;
-  line-height: 17.143px;
-  letter-spacing: 2.857px;
-  text-transform: uppercase;
+  width: 111.429px;
+  height: 23.623px;
 }
 
 .map-card-row {
@@ -1186,6 +1178,8 @@ button {
 .currency-chip--green {
   border-color: transparent;
   background: #309b7b;
+  min-width: 0;
+  padding: 8px 12px 8px 8px;
 }
 
 .currency-chip--green span {
@@ -1366,7 +1360,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: 560px;
   padding: 24px 0;
 }
@@ -1458,19 +1452,26 @@ button {
 
 .faq-answer {
   display: block;
-  max-height: none;
-  overflow: visible;
-  opacity: 1;
-  transform: none;
-  margin: -12px 24px 24px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-6px);
+  margin: 0 24px;
   color: var(--color-text);
   font-size: 14px;
   line-height: 20px;
-  transition: none;
+  transition:
+    max-height var(--duration-ui) var(--ease-out-strong),
+    opacity var(--duration-fast) ease-out,
+    transform var(--duration-fast) ease-out,
+    margin var(--duration-fast) ease-out;
 }
 
 .faq-item.is-open .faq-answer {
-  max-height: none;
+  max-height: var(--faq-answer-height, 96px);
+  opacity: 1;
+  transform: translateY(0);
+  margin: -12px 24px 24px;
 }
 
 .site-footer {
@@ -1550,6 +1551,7 @@ button {
 
 .footer-cta p {
   max-width: 303px;
+  text-wrap: pretty;
 }
 
 .footer-cta-action {
@@ -1678,7 +1680,9 @@ button {
   }
 
   .map-card-bg {
-    transform: translate(-265px, -25.73px);
+    left: -265px;
+    top: -26px;
+    transform: none;
   }
 
   .faq {
@@ -1978,11 +1982,11 @@ button {
   }
 
   .map-card-bg {
-    left: 50%;
-    top: 50%;
+    left: -210px;
+    top: -30px;
     width: 760px;
     height: auto;
-    transform: translate(-210px, -30px);
+    transform: none;
   }
 
   .confirm-amount-row span {
@@ -2011,7 +2015,11 @@ button {
   }
 
   .faq-answer {
-    margin: 0 24px 16px;
+    margin: 0 24px;
+  }
+
+  .faq-item.is-open .faq-answer {
+    margin: -4px 24px 16px;
   }
 
   .site-footer {
