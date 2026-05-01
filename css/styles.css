@@ -558,7 +558,10 @@ button {
 .currency-menu__list {
   max-height: 272px;
   overflow-y: auto;
+  overscroll-behavior: contain;
   padding: 6px;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
 }
 
 .currency-option {

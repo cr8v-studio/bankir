@@ -381,6 +381,7 @@ function initSmoothScroll(motion, ScrollTrigger) {
   const lenis = new Lenis({
     duration: 1.08,
     easing: (t) => Math.min(1, 1.001 - 2 ** (-10 * t)),
+    prevent: (node) => Boolean(node.closest?.(".currency-menu")),
     smoothWheel: true,
     syncTouch: false,
   });
@@ -895,11 +896,18 @@ function createCurrencyMenu(root) {
   `;
   root.append(element);
 
+  element.addEventListener("wheel", stopScrollPropagation, { passive: true });
+  element.addEventListener("touchmove", stopScrollPropagation, { passive: true });
+
   return {
     element,
     search: element.querySelector(".currency-menu__search"),
     list: element.querySelector(".currency-menu__list"),
   };
+}
+
+function stopScrollPropagation(event) {
+  event.stopPropagation();
 }
 
 function updateCurrencyTrigger(trigger, country) {
