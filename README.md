@@ -1,67 +1,67 @@
 # BANKIR
 
-Static landing page for an international money transfer product. The page presents a fast card-to-card transfer flow for Visa, Mastercard and UnionPay with a clean fintech visual system.
+Статическая лендинговая страница для fintech-продукта международных переводов. Проект показывает быстрый сценарий перевода с карты на карту через Visa, Mastercard и UnionPay: от выбора валюты до подтверждения суммы и времени доставки.
 
-[Live page](https://cr8v-studio.github.io/bankir/)
+[Открыть сайт](https://cr8v-studio.github.io/bankir/)
 
 <p>
-  <img src="assets/icons/logo-flow-transfer.svg" width="56" alt="BANKIR logo" />
+  <img src="assets/icons/logo-flow-transfer.svg" width="56" alt="Логотип BANKIR" />
   <img src="assets/icons/visa-logo.svg" width="48" alt="Visa" />
   <img src="assets/icons/mastercard.svg" width="48" alt="Mastercard" />
   <img src="assets/icons/unionpay.svg" width="48" alt="UnionPay" />
 </p>
 
-## Project Snapshot
+## Кратко о проекте
 
-| Product | Format | Stack | Deployment |
+| Продукт | Формат | Технологии | Деплой |
 | --- | --- | --- | --- |
-| International card transfers | Responsive landing page | HTML, CSS, JavaScript | GitHub Pages |
+| Международные переводы на карты | Адаптивный лендинг | HTML, CSS, JavaScript | GitHub Pages |
 
-| Key proof | Visual cue | Message |
+| Доверие | Визуальный маркер | Смысл |
 | --- | --- | --- |
-| <img src="assets/icons/license-icon.svg" width="28" alt="" /> | License | DMCC licensed payment company |
-| <img src="assets/icons/countries-icon.svg" width="28" alt="" /> | Coverage | Transfers to 190+ countries |
-| <img src="assets/icons/fee-icon.svg" width="28" alt="" /> | Pricing | No hidden fees before confirmation |
+| <img src="assets/icons/license-icon.svg" width="28" alt="" /> | Лицензия | DMCC-лицензия платежной компании |
+| <img src="assets/icons/countries-icon.svg" width="28" alt="" /> | География | Переводы в 190+ стран |
+| <img src="assets/icons/fee-icon.svg" width="28" alt="" /> | Прозрачность | Итоговая сумма видна до подтверждения |
 
-## Visual System
+## Визуальная система
 
-| Element | Example | Role |
+| Элемент | Пример | Роль в интерфейсе |
 | --- | --- | --- |
-| Brand color | `#068760` | Primary CTA, icons, accent blocks |
-| Typography | Manrope | Modern product interface tone |
-| Cards | Transfer fields, balance cards, FAQ | Reusable product UI modules |
-| Motion | Hover, press, FAQ open states | Lightweight feedback without heavy scripts |
+| Основной цвет | `#068760` | CTA, иконки, акцентные блоки |
+| Типографика | Manrope | Современный продуктовый fintech-тон |
+| Карточки | Поля перевода, баланс, FAQ | Повторяемые UI-модули |
+| Motion | Hover, нажатие, раскрытие FAQ | Легкая обратная связь без тяжелых библиотек |
 
-## Page Structure
+## Структура страницы
 
 ```mermaid
 flowchart LR
-  A["Header"] --> B["Hero transfer card"]
-  B --> C["Trust signals"]
-  C --> D["Use cases"]
-  D --> E["How it works"]
+  A["Шапка"] --> B["Hero с карточкой перевода"]
+  B --> C["Доверительные маркеры"]
+  C --> D["Сценарии использования"]
+  D --> E["Как это работает"]
   E --> F["FAQ"]
-  F --> G["Legal footer + CTA"]
+  F --> G["Юридический футер + CTA"]
 ```
 
-## Transfer Flow
+## Пользовательский сценарий
 
 ```mermaid
 flowchart TD
-  A["Choose sending currency"] --> B["Enter amount"]
-  B --> C["Check exchange rate"]
-  C --> D["Choose receiving currency"]
-  D --> E["Review delivery time"]
-  E --> F["Send money"]
+  A["Выбор валюты отправки"] --> B["Ввод суммы"]
+  B --> C["Проверка курса"]
+  C --> D["Выбор валюты получения"]
+  D --> E["Проверка времени доставки"]
+  E --> F["Отправка денег"]
 ```
 
-## UI Examples
+## Примеры визуала
 
-| Transfer card | Use-case icons | Global visual |
+| Карточка перевода | Сценарии | Глобальный охват |
 | --- | --- | --- |
-| <img src="assets/flags/RU.svg" width="28" alt="RUB" /> RUB to <img src="assets/flags/US.svg" width="28" alt="USD" /> USD | <img src="assets/icons/diversity-3.svg" width="28" alt="" /> Family <br><img src="assets/icons/flight.svg" width="28" alt="" /> Relocation <br><img src="assets/icons/currency-ruble.svg" width="28" alt="" /> Services | <img src="assets/images/map.svg" width="220" alt="World map visual" /> |
+| <img src="assets/flags/RU.svg" width="28" alt="RUB" /> RUB → <img src="assets/flags/US.svg" width="28" alt="USD" /> USD | <img src="assets/icons/diversity-3.svg" width="28" alt="" /> Семья и друзья <br><img src="assets/icons/flight.svg" width="28" alt="" /> Переезд <br><img src="assets/icons/currency-ruble.svg" width="28" alt="" /> Оплата услуг | <img src="assets/images/map.svg" width="220" alt="Карта мира" /> |
 
-## Files
+## Архитектура файлов
 
 ```text
 .
@@ -75,26 +75,26 @@ flowchart TD
 `-- .github/workflows/pages.yml
 ```
 
-## Local Preview
+## Локальный просмотр
 
 ```bash
 python3 -m http.server 4173
 ```
 
-Open:
+Открыть в браузере:
 
 ```text
 http://127.0.0.1:4173/
 ```
 
-## Deployment
+## Публикация
 
-The project is deployed by GitHub Actions to GitHub Pages on every push to `main`.
+Проект автоматически публикуется через GitHub Actions на GitHub Pages при каждом push в `main`.
 
 ```mermaid
 flowchart LR
-  A["Push to main"] --> B["GitHub Actions"]
-  B --> C["Upload static artifact"]
-  C --> D["Deploy to GitHub Pages"]
+  A["Push в main"] --> B["GitHub Actions"]
+  B --> C["Сборка статического артефакта"]
+  C --> D["Деплой в GitHub Pages"]
   D --> E["cr8v-studio.github.io/bankir"]
 ```
