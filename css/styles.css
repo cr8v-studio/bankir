@@ -15,8 +15,9 @@
   --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out-strong: cubic-bezier(0.77, 0, 0.175, 1);
   --duration-press: 140ms;
-  --duration-fast: 180ms;
-  --duration-ui: 220ms;
+  --duration-fast: 160ms;
+  --duration-ui: 200ms;
+  --duration-open: 240ms;
   --container: 1200px;
   --gutter: 48px;
   --header-height: 80px;
@@ -129,9 +130,9 @@ button {
 .nav-pill a {
   padding: 0 20px;
   transition:
-    background-color var(--duration-fast) ease-out,
-    color var(--duration-fast) ease-out,
-    box-shadow var(--duration-fast) ease-out;
+    background-color var(--duration-fast) var(--ease-out-strong),
+    color var(--duration-fast) var(--ease-out-strong),
+    box-shadow var(--duration-fast) var(--ease-out-strong);
 }
 
 @media (hover: hover) {
@@ -162,10 +163,10 @@ button {
 
 .button {
   transition:
-    transform var(--duration-press) ease-out,
-    background-color var(--duration-fast) ease-out,
-    border-color var(--duration-fast) ease-out,
-    color var(--duration-fast) ease-out;
+    transform var(--duration-press) var(--ease-out-strong),
+    background-color var(--duration-fast) var(--ease-out-strong),
+    border-color var(--duration-fast) var(--ease-out-strong),
+    color var(--duration-fast) var(--ease-out-strong);
 }
 
 .button:active {
@@ -453,10 +454,10 @@ button {
   cursor: pointer;
   outline: none;
   transition:
-    transform var(--duration-press) ease-out,
-    background-color var(--duration-fast) ease-out,
-    border-color var(--duration-fast) ease-out,
-    box-shadow var(--duration-fast) ease-out;
+    transform var(--duration-press) var(--ease-out-strong),
+    background-color var(--duration-fast) var(--ease-out-strong),
+    border-color var(--duration-fast) var(--ease-out-strong),
+    box-shadow var(--duration-fast) var(--ease-out-strong);
 }
 
 .currency-chip img:first-child {
@@ -474,7 +475,7 @@ button {
   width: 11.62px;
   height: 6.69px;
   flex: 0 0 11.62px;
-  transition: transform var(--duration-fast) ease-out;
+  transition: transform var(--duration-fast) var(--ease-out-strong);
 }
 
 .currency-chip[aria-expanded="true"] .currency-chip-arrow {
@@ -627,9 +628,9 @@ button {
   cursor: pointer;
   outline: none;
   transition:
-    transform var(--duration-press) ease-out,
-    background-color var(--duration-fast) ease-out,
-    box-shadow var(--duration-fast) ease-out;
+    transform var(--duration-press) var(--ease-out-strong),
+    background-color var(--duration-fast) var(--ease-out-strong),
+    box-shadow var(--duration-fast) var(--ease-out-strong);
 }
 
 .rate-bridge-icon img {
@@ -1528,14 +1529,13 @@ button {
 .faq-list {
   display: grid;
   gap: 24px;
-  filter: drop-shadow(0 53px 26.5px rgba(1, 19, 14, 0.04))
-    drop-shadow(0 13px 14.5px rgba(1, 19, 14, 0.04));
 }
 
 .faq-item {
   overflow: hidden;
   border-radius: 24px;
   background: var(--color-white);
+  box-shadow: 0 20px 32px rgba(1, 19, 14, 0.04), 0 8px 14px rgba(1, 19, 14, 0.02);
 }
 
 .faq-question {
@@ -1551,7 +1551,7 @@ button {
   outline: none;
   padding: 24px;
   text-align: left;
-  transition: color var(--duration-fast) ease-out;
+  transition: color var(--duration-fast) var(--ease-out-strong);
 }
 
 .faq-question span:first-child {
@@ -1569,7 +1569,7 @@ button {
   background: var(--color-brand);
   transition:
     transform var(--duration-fast) var(--ease-out-strong),
-    background-color var(--duration-fast) ease-out;
+    background-color var(--duration-fast) var(--ease-out-strong);
 }
 
 .faq-icon::before,
@@ -1604,10 +1604,10 @@ button {
   font-size: 14px;
   line-height: 20px;
   transition:
-    max-height var(--duration-ui) var(--ease-out-strong),
-    opacity var(--duration-fast) ease-out,
-    transform var(--duration-fast) ease-out,
-    margin var(--duration-fast) ease-out;
+    max-height var(--duration-open) var(--ease-in-out-strong),
+    opacity var(--duration-fast) var(--ease-out-strong),
+    transform var(--duration-fast) var(--ease-out-strong),
+    margin var(--duration-fast) var(--ease-out-strong);
 }
 
 .faq-item.is-open .faq-answer {
@@ -2229,7 +2229,9 @@ button {
   }
 
   .faq-icon {
-    transition: background-color var(--duration-fast) ease-out;
+    transition:
+      transform var(--duration-fast) var(--ease-out-strong),
+      background-color var(--duration-fast) var(--ease-out-strong);
   }
 
   .site-footer {

@@ -32,6 +32,15 @@
 - `--duration-press`
 - `--duration-fast`
 - `--duration-ui`
+- `--duration-open`
+
+Рекомендуемые значения:
+- `--ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1)`
+- `--ease-in-out-strong: cubic-bezier(0.77, 0, 0.175, 1)`
+- `--duration-press: 140ms`
+- `--duration-fast: 160ms`
+- `--duration-ui: 200ms`
+- `--duration-open: 240ms`
 
 Почему:
 - чтобы все состояния ощущались системно
@@ -40,6 +49,7 @@
 Правило:
 - не писать случайные `200ms ease`, `300ms ease-in`, `transition: all`
 - по умолчанию использовать существующие motion tokens
+- для часто используемых элементов держать motion короче и тише, чем для раскрывающихся блоков
 
 ## 3. Легкий `:active` для CTA и pressable controls
 
